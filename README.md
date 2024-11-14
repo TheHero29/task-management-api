@@ -13,8 +13,8 @@ This project is a REST API for a task management system. It includes user authen
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (version: ___)
-- [Database of choice] (e.g., PostgreSQL, MySQL, MongoDB, or SQLite)
+- [Node.js](https://nodejs.org/) (version: 20)
+- [Database of choice](https://www.mongodb.com/try/download/community) (MongoDB)
 
 ## Getting Started
 
