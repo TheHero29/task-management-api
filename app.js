@@ -23,7 +23,7 @@ app.use(cors());
 app.use(logger);
 
 //Routes
-app.use("/",authMiddleware,routes);
+app.use("/",routes);
 
 app.use(errorHandler);
 

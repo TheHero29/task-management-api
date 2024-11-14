@@ -1,7 +1,14 @@
+import { ZodError } from "zod";
+
 function errorHandler(err, req, res, next) {
-  const status = err.status || 500;
+  let status = err.status || 500;
+  let message = err.message || "Internal Server Error";
+  if (err instanceof ZodError) {
+    status = 400;
+    message = err.errors[0].message;
+  }
   const errorResponse = {
-    message: err.message || "Internal Server Error",
+    message: message,
     timestamp: new Date().toISOString(),
   };
   if (process.env.NODE_ENV === "development" && err.stack) {
