@@ -21,7 +21,7 @@ This project is a REST API for a task management system. It includes user authen
 ### 1. Clone the repository
 
 ```bash
-git clone <https://github.com/TheHero29/task-management-api.git>
+git clone https://github.com/TheHero29/task-management-api.git
 cd task-management-api
 ```
 
