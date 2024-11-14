@@ -2,11 +2,11 @@ function errorHandler(err, req, res, next) {
   const status = err.status || 500;
   const errorResponse = {
     message: err.message || "Internal Server Error",
-    code: err.code || "INTERNAL_ERROR",
-    status,
     timestamp: new Date().toISOString(),
   };
-  
+  if (process.env.NODE_ENV === "development" && err.stack) {
+    console.error(err);
+  }
   res.status(status).json(errorResponse);
 }
 

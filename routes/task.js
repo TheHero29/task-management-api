@@ -1,20 +1,16 @@
 import { Router } from "express";
-import Task from "../models/task.js";
+import taskController from "../controllers/task";
 
-const router = Router();
+const TaskRouter = Router();
 
-router.get("/", async (req, res) => {
-  try {
-    const tasks = await Task.find();
-    res.json(tasks);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
+TaskRouter.post("/", taskController.createTask);
 
+TaskRouter.get("/", taskController.getTasks);
 
+TaskRouter.get("/:id", taskController.getTask);
 
+TaskRouter.put("/:id", taskController.updateTask);
 
+TaskRouter.delete("/:id", taskController.deleteTask);
 
-
-export default router;
+export default TaskRouter;
