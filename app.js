@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import routes from "./routes/index.js";
 import errorHandler from "./middlewares/errorHandler.js";
 import logger from "./middlewares/logger.js";
+import authMiddleware from "./middlewares/auth.js";
 
 dotenv.config();
 const app = express();
@@ -22,10 +23,12 @@ app.use(cors());
 app.use(logger);
 
 //Routes
-app.use("/", routes);
+app.use("/",authMiddleware,routes);
 
 app.use(errorHandler);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+export default app;
