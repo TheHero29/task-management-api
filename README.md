@@ -14,7 +14,7 @@ This project is a REST API for a task management system. It includes user authen
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) (version: 20)
-- [Database of choice](https://www.mongodb.com/try/download/community) (MongoDB)
+- [Database](https://www.mongodb.com/try/download/community) (MongoDB)
 
 ## Getting Started
 
@@ -22,21 +22,24 @@ This project is a REST API for a task management system. It includes user authen
 
 ```bash
 git clone <https://github.com/TheHero29/task-management-api.git>
-cd <task-management-api>
+cd task-management-api
 ```
 
 ### 2. Install dependencies
+
 ```bash
 npm install
 ```
 
-### 3. Set up environment variables
+### 3. Make a .env file and set up environment variable
+
 ```bash
 MONGODB_URL=<your-database-url>
 JWT_SECRET=<your-jwt-secret>
 ```
+
 ### 4. Start the server
+
 ```bash
 npm start
 ```
-
