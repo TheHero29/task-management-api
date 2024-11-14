@@ -10,7 +10,6 @@ This project is a REST API for a task management system. It includes user authen
 - Task management (add, update, delete, mark as complete)
 - Task listing with filtering by status, priority, and due date
 - Data validation and structured error handling
-- Optional: Role-based access control, sorting and pagination, task reminders, and automated tests
 
 ## Prerequisites
 
@@ -22,8 +21,8 @@ This project is a REST API for a task management system. It includes user authen
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone <https://github.com/TheHero29/task-management-api.git>
+cd <task-management-api>
 ```
 
 ### 2. Install dependencies
