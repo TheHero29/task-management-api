@@ -3,6 +3,8 @@ import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 import routes from "./routes/index.js";
+import errorHandler from "./middlewares/errorHandler.js";
+
 dotenv.config();
 const app = express();
 const port = process.env.PORT || 8080;
@@ -16,9 +18,10 @@ mongoose
 //Middlewares
 app.use(express.json());
 app.use(cors());
+app.use(errorHandler);
 
 //Routes
-app.use("/api", routes);
+app.use("/", routes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
